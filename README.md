@@ -1,75 +1,31 @@
-# React + TypeScript + Vite
+# 前端从 0 到全栈 · 学习路线
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一座可以「攀登」的前端学习路线图 —— 沿着森林、遗迹与石阶一路向上，抵达知识圣殿。
 
-Currently, two official plugins are available:
+- **内容**：从出发前的基础条件、AI 生产力，到基础 / 核心 / 进阶 / 专家 / 全栈五个等级，再到设计出图等加分项。每个技术都有一句话简介 + 官方文档一键跳转。
+- **在线地址**：https://shallowaria.github.io/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 技术栈
 
-## React Compiler
+React 19 · TypeScript · Vite · Tailwind CSS v4 · shadcn/ui · motion · lucide-react
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 本地开发
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+pnpm install
+pnpm dev        # 本地开发
+pnpm build      # 构建到 dist/
+pnpm preview    # 预览构建产物
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 部署
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+推送到 `main` 分支后，GitHub Actions（`.github/workflows/deploy.yml`）会自动构建并发布到 GitHub Pages。
+首次部署需在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 目录
 
-```
+- `src/data/roadmap.ts` — 全部路线数据（站点与技术节点）
+- `src/components/` — Hero / Legend / Station / NodeCard
+- `src/components/ui/` — shadcn 组件
+- `前端从0学习路线.md` — 内容源（Markdown 版）
