@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+  前端学习路线 · 配色系统
+  Sky / Ocean / Leaves / Sunlight / Cloud
+  明亮日光奇幻世界，主题锁定 light（日光场景，暗色会破坏美术方向）
+*/
+
+@theme {
+  /* ---- 天空 Sky ---- */
+  --color-sky-1: #5db8ff;
+  --color-sky-2: #7fd6ff;
+  --color-sky-3: #9eebff;
+  /* ---- 海洋 Ocean ---- */
+  --color-ocean-1: #2f8bff;
+  --color-ocean-2: #2aa9e0;
+  /* ---- 森林 Leaves ---- */
+  --color-leaf-1: #4caf50;
+  --color-leaf-2: #66bb6a;
+  --color-leaf-3: #7ed957;
+  /* ---- 阳光 Sunlight ---- */
+  --color-sun-1: #fff6b7;
+  --color-sun-2: #ffe98a;
+  /* ---- 云 Cloud ---- */
+  --color-cloud-1: #ffffff;
+  --color-cloud-2: #f7f9ff;
+  /* ---- 墨色（森林深处的文字色）---- */
+  --color-ink: #0e2a24;
+  --color-ink-soft: #33544b;
+  --color-ink-faint: #5c7d74;
+
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-display: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", ui-sans-serif,
+    system-ui, sans-serif;
+
+  --shadow-canopy: 0 24px 60px -20px rgba(14, 42, 36, 0.35);
+  --shadow-leaf: 0 12px 30px -12px rgba(47, 139, 255, 0.35);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-drift: drift 60s linear infinite;
+  --animate-sun: sunpulse 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes sunpulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.08); }
+}
+
+/* ---- shadcn tokens（映射到日光配色）---- */
+:root {
+  --radius: 1rem;
+
+  --background: #f4fbff;
+  --foreground: #0e2a24;
+
+  --card: #ffffff;
+  --card-foreground: #0e2a24;
+
+  --popover: #ffffff;
+  --popover-foreground: #0e2a24;
+
+  --primary: #2f8bff;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eaf7ef;
+  --secondary-foreground: #1f4a2e;
+
+  --muted: #eef4f6;
+  --muted-foreground: #5c7d74;
+
+  --accent: #fff6b7;
+  --accent-foreground: #6b5200;
+
+  --destructive: #e5484d;
+
+  --border: rgba(14, 42, 36, 0.1);
+  --input: rgba(14, 42, 36, 0.12);
+  --ring: #2aa9e0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-sun-2);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
