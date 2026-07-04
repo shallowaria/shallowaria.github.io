@@ -1,17 +1,20 @@
-import { ArrowUp, Compass, Leaf, MountainSnow } from "lucide-react"
+import { ArrowUp, Compass, Leaf, MountainSnow } from "lucide-react";
 
-import { Hero } from "@/components/Hero"
-import { Legend } from "@/components/Legend"
-import { StationSection } from "@/components/Station"
-import { Button } from "@/components/ui/button"
-import { STATIONS } from "@/data/roadmap"
-import pathScene from "@/assets/path-scene.webp"
+import { Hero } from "@/components/Hero";
+import { Legend } from "@/components/Legend";
+import { StationSection } from "@/components/Station";
+import { Button } from "@/components/ui/button";
+import { STATIONS } from "@/data/roadmap";
+import pathScene from "@/assets/path-scene.webp";
 
 const TIPS = [
   { icon: Compass, text: "别追求一次学完。这条路按月甚至按年算，慢就是快。" },
   { icon: Leaf, text: "每一级都动手做个小项目，光看不练等于没学。" },
-  { icon: MountainSnow, text: "AI 从第一天就用起来：报错丢给它、代码让它 review。" },
-]
+  {
+    icon: MountainSnow,
+    text: "AI 从第一天就用起来：报错丢给它、代码让它 review。",
+  },
+];
 
 export default function App() {
   return (
@@ -54,10 +57,10 @@ export default function App() {
             <MountainSnow className="size-7" />
           </div>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-[#6b5200] md:text-4xl">
-            抵达知识圣殿
+            抵达全栈之径
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-            RoadMap 不只是一棵知识树，而是一座可以探索的幻想世界。到这里你已经走了很远，剩下的路，交给时间和热爱。
+            到这里你已经走了很远，剩下的路，交给时间和热爱。
           </p>
 
           <div className="mt-8 grid gap-3 text-left">
@@ -102,5 +105,5 @@ export default function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

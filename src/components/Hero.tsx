@@ -1,17 +1,18 @@
-import { ArrowDown, Sparkles } from "lucide-react"
-import { motion, useReducedMotion } from "motion/react"
+import { ArrowDown, Sparkles } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 
-import { Button } from "@/components/ui/button"
-import heroScene from "@/assets/hero-scene.webp"
+import { Button } from "@/components/ui/button";
+import heroScene from "@/assets/hero-scene.webp";
 
 export function Hero() {
-  const reduce = useReducedMotion()
+  const reduce = useReducedMotion();
 
   const goTo = (id: string) => {
-    document
-      .getElementById(id)
-      ?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" })
-  }
+    document.getElementById(id)?.scrollIntoView({
+      behavior: reduce ? "auto" : "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <header className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-6 pb-20 pt-24">
@@ -52,14 +53,14 @@ export function Hero() {
 
         <span className="mb-5 inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/80 px-4 py-1.5 text-sm font-semibold text-ink-soft shadow-sm backdrop-blur-md">
           <Sparkles className="size-4 text-ocean-1" />
-          前端学习路线 · 从森林入口到知识圣殿
+          前端学习路线
         </span>
 
         <h1
           className="text-5xl font-black leading-[1.08] tracking-tight text-ink md:text-7xl"
           style={{ textShadow: "0 2px 24px rgba(255,255,255,0.9)" }}
         >
-          前端从 0 到全栈
+          前端从零到全栈
         </h1>
 
         <p
@@ -69,7 +70,7 @@ export function Hero() {
               "0 1px 2px rgba(255,255,255,0.95), 0 2px 18px rgba(255,255,255,0.95)",
           }}
         >
-          沿着石阶、藤蔓与遗迹一路向上，逐级攀登，抵达世界树树冠上的知识圣殿。
+          沿着石阶、藤蔓与遗迹一路向下，逐级攀登，最终成为全栈工程师。
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -83,5 +84,5 @@ export function Hero() {
         </div>
       </motion.div>
     </header>
-  )
+  );
 }

@@ -1,42 +1,42 @@
-// 前端从 0 到全栈 · 学习路线数据
+// 前端从零到全栈 · 学习路线数据
 // 每个节点：简介一句话 + 官方一键跳转（sub 为补充资料）
 
-export type NodeTag = "must" | "option" | "plus"
+export type NodeTag = "must" | "option" | "plus";
 
 export interface SubLink {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
 export interface RoadmapNode {
-  name: string
-  en?: string
-  desc: string
-  href?: string
-  tag?: NodeTag
-  subs?: SubLink[]
+  name: string;
+  en?: string;
+  desc: string;
+  href?: string;
+  tag?: NodeTag;
+  subs?: SubLink[];
 }
 
-export type Tone = "sky" | "ocean" | "leaf" | "leaf2" | "leaf3" | "sun"
-export type StationKind = "prep" | "ai" | "level" | "bonus"
+export type Tone = "sky" | "ocean" | "leaf" | "leaf2" | "leaf3" | "sun";
+export type StationKind = "prep" | "ai" | "level" | "bonus";
 
 export interface Station {
-  id: string
-  kind: StationKind
-  marker: string // 攀登标记（等级/图标文字）
-  title: string
-  elevation: string
-  blurb: string
-  tone: Tone
-  optional?: boolean
-  nodes: RoadmapNode[]
+  id: string;
+  kind: StationKind;
+  marker: string; // 攀登标记（等级/图标文字）
+  title: string;
+  elevation: string;
+  blurb: string;
+  tone: Tone;
+  optional?: boolean;
+  nodes: RoadmapNode[];
 }
 
 export const TAG_LABEL: Record<NodeTag, string> = {
   must: "主线必学",
   option: "可选了解",
   plus: "加分项",
-}
+};
 
 export const STATIONS: Station[] = [
   {
@@ -431,8 +431,7 @@ export const STATIONS: Station[] = [
     marker: "✦",
     title: "加分项 · 知识圣殿的宝库",
     elevation: "世界树树冠 · 圣殿",
-    blurb:
-      "都不是必需，但每一项都能让你和别人拉开差距：设计出图、3D、跨端。前端 + 审美 = 稀缺。",
+    blurb: "都不是必需，但每一项都能让你和别人拉开差距：设计出图、3D、跨端。",
     tone: "sun",
     nodes: [
       {
@@ -440,7 +439,9 @@ export const STATIONS: Station[] = [
         desc: "浏览器里玩 3D，让作品在一堆平面页面里脱颖而出。",
         href: "https://threejs.org/",
         tag: "plus",
-        subs: [{ label: "React Three Fiber", href: "https://r3f.docs.pmnd.rs/" }],
+        subs: [
+          { label: "React Three Fiber", href: "https://r3f.docs.pmnd.rs/" },
+        ],
       },
       {
         name: "Dart + Flutter",
@@ -488,4 +489,4 @@ export const STATIONS: Station[] = [
       },
     ],
   },
-]
+];
